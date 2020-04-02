@@ -99,7 +99,25 @@ var mutation = new GraphQLObjectType({
                     },
                     fontSize: {
                         type: new GraphQLNonNull(GraphQLInt)
-                    }
+                    },
+                    backgroundColor: {
+                        type: new GraphQLNonNull(GraphQLString)
+                    },
+                    borderColor: {
+                        type: new GraphQLNonNull(GraphQLString)
+                    },
+                    borderRadius: {
+                        type: new GraphQLNonNull(GraphQLInt)
+                    },
+                    borderWidth: {
+                        type: new GraphQLNonNull(GraphQLInt)
+                    },
+                    padding: {
+                        type: new GraphQLNonNull(GraphQLInt)
+                    },
+                    margins: {
+                        type: new GraphQLNonNull(GraphQLInt)
+                    },
                 },
                 resolve: function (root, params) {
                     const logoModel = new LogoModel(params);

@@ -8,7 +8,7 @@ const ADD_LOGO = gql`
         $text: String!,
         $color: String!,
         $fontSize: Int!,
-        $backgroundColor: Int!,
+        $backgroundColor: String!,
         $borderColor: String!,
         $borderRadius: Int!,
         $borderWidth: Int!,

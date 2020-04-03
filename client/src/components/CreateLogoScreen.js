@@ -49,7 +49,7 @@ class CreateLogoScreen extends Component {
                                     e.preventDefault();
                                     addLogo({ variables: { text: text.value, color: color.value, fontSize: parseInt(fontSize.value), 
                                         backgroundColor: color.value, borderColor: color.value, borderRadius: parseInt(borderRadius.value),
-                                        borderWidth: parseInt(borderWidth.value), padding: parseInt(padding.value), margin: parseInt(margin.value) } });
+                                        borderWidth: parseInt(borderWidth.value), padding: parseInt(padding.value), margin: parseInt(margin.value)} });
                                     text.value = "";
                                     color.value = "";
                                     fontSize.value = "";

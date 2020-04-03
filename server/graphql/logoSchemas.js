@@ -40,7 +40,7 @@ var logoType = new GraphQLObjectType({
             padding: {
                 type: GraphQLInt
             },
-            margins: {
+            margin: {
                 type: GraphQLInt
             },
             lastUpdate: {
@@ -115,7 +115,7 @@ var mutation = new GraphQLObjectType({
                     padding: {
                         type: new GraphQLNonNull(GraphQLInt)
                     },
-                    margins: {
+                    margin: {
                         type: new GraphQLNonNull(GraphQLInt)
                     }
                 },
@@ -159,7 +159,7 @@ var mutation = new GraphQLObjectType({
                     padding: {
                         type: new GraphQLNonNull(GraphQLInt)
                     },
-                    margins: {
+                    margin: {
                         type: new GraphQLNonNull(GraphQLInt)
                     }
                 },

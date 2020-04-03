@@ -47,6 +47,7 @@ class CreateLogoScreen extends Component {
                             <div className="panel-body">
                                 <form onSubmit={e => {
                                     e.preventDefault();
+                                    console.log(borderWidth.value);
                                     addLogo({ variables: { text: text.value, color: color.value, fontSize: parseInt(fontSize.value), 
                                         backgroundColor: color.value, borderColor: color.value, borderRadius: parseInt(borderRadius.value),
                                         borderWidth: parseInt(borderWidth.value), padding: parseInt(padding.value), margin: parseInt(margin.value)} });
@@ -105,13 +106,13 @@ class CreateLogoScreen extends Component {
                                     <div className="form-group">
                                         <label htmlFor="padding">Padding:</label>
                                         <input type="number" className="form-control" name="padding" ref={node => {
-                                            borderWidth = node;
+                                            padding = node;
                                         }} placeholder="Padding" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="margin">Margin:</label>
                                         <input type="number" className="form-control" name="margin" ref={node => {
-                                            borderWidth = node;
+                                            margin = node;
                                         }} placeholder="Margin" />
                                     </div>
                                     <button type="submit" className="btn btn-success">Submit</button>

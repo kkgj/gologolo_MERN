@@ -43,7 +43,11 @@ class HomeScreen extends Component {
                                     List Maker
                                 </div>
                                 <div>
-                                    <Link id="add_logo_button" to="/create">Add Logo</Link>
+                                    <Link id="add_logo_button" to="/create">
+                                        <button>
+                                            Create a New Logo
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

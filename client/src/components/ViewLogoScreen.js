@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import gql from 'graphql-tag';
 import { Query, Mutation } from 'react-apollo';
+import TextEditWorkspace from './TextEditWorkspace';
 
 const GET_LOGO = gql`
     query logo($logoId: String) {
@@ -48,7 +49,8 @@ class ViewLogoScreen extends Component {
                                         View Logo
                                     </h3>
                                 </div>
-                                <div className="panel-body">
+                                <div className="row">
+                                    <div className="panel-body" style={{marginLeft: 17}}>
                                     <dl>
                                         <dt>Text:</dt>
                                         <dd>{data.logo.text}</dd>
@@ -87,6 +89,9 @@ class ViewLogoScreen extends Component {
                                             </div>
                                         )}
                                     </Mutation>
+                                    </div>
+                                <TextEditWorkspace
+                                                logo={data.logo} />
                                 </div>
                             </div>
                         </div>

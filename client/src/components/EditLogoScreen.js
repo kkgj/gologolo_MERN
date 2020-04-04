@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import gql from "graphql-tag";
 import { Query, Mutation } from "react-apollo";
+import TextEditWorkspace from './TextEditWorkspace.js'
 
 const GET_LOGO = gql`
     query logo($logoId: String) {
@@ -69,11 +70,11 @@ class EditLogoScreen extends Component {
                                                 Edit Logo
                                         </h3>
                                         </div>
-                                        <div className="panel-body">                                            
+                                        <div className="row">                                            
                                             <form onSubmit={e => {
                                                 e.preventDefault();
                                                 updateLogo({ variables: { id: data.logo._id, text: text.value, color: color.value, fontSize: parseInt(fontSize.value),
-                                                    backgroundColor: color.value, borderColor: color.value, borderRadius: parseInt(borderRadius.value),
+                                                    backgroundColor: backgroundColor.value, borderColor: borderColor.value, borderRadius: parseInt(borderRadius.value),
                                                     borderWidth: parseInt(borderWidth.value), padding: parseInt(padding.value), margin: parseInt(margin.value) } });
                                                 text.value = "";
                                                 color.value = "";
@@ -141,6 +142,8 @@ class EditLogoScreen extends Component {
                                                 </div>
                                                 <button type="submit" className="btn btn-success">Submit</button>
                                             </form>
+                                            <TextEditWorkspace
+                                                logo={data.logo} />
                                             {loading && <p>Loading...</p>}
                                             {error && <p>Error :( Please try again</p>}
                                         </div>

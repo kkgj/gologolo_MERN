@@ -11,6 +11,12 @@ const GET_LOGO = gql`
             text
             color
             fontSize
+            backgroundColor
+            borderColor
+            borderRadius
+            borderWidth
+            padding
+            margin
             lastUpdate
         }
     }

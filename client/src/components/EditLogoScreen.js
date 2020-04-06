@@ -50,7 +50,12 @@ const UPDATE_LOGO = gql`
 `;
 
 class EditLogoScreen extends Component {
-
+    // constructor(props){
+    //     // this.state = {
+    //     //     text: "",
+    //     //     color: "",
+    //     // }
+    // }
     render() {
         let text, color, fontSize, borderRadius, backgroundColor, borderColor, borderWidth, padding, margin;
         return (

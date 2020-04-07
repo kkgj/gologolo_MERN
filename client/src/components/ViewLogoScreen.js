@@ -90,7 +90,7 @@ class ViewLogoScreen extends Component {
                                         )}
                                     </Mutation>
                                     </div>
-                                <TextEditWorkspace
+                                <TextEditWorkspace text={data.logo.text}
                                                 logo={data.logo} />
                                 </div>
                             </div>

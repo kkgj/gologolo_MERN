@@ -5,6 +5,7 @@ class TextEditWorkspace extends Component {
     render() {
         const styles = {
             container: {
+                text: this.props.logo.text,
                 color: this.props.logo.color,
                 fontSize: this.props.logo.fontSize + "pt",
                 backgroundColor : this.props.logo.backgroundColor,
@@ -25,7 +26,7 @@ class TextEditWorkspace extends Component {
         return (
             <div className="col s8" 
                 style={ styles.container }>
-                {this.props.logo.text}
+                {this.props.text}
             </div>
         )
     }

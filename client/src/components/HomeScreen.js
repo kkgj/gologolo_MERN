@@ -26,28 +26,30 @@ class HomeScreen extends Component {
                     if (error) return `Error! ${error.message}`;
 
                     return (
-                        <div className="container row">
-                            <div className="col s4">
-                                <h3>Recent Work</h3>
-                                { this.handleSortByDate(data) }
-                                { data.logos.map((logo, index) => (
-                                    <div key={index} className='home_logo_link'
-                                        style={{ cursor: "pointer" }}>
-                                        <Link to={`/view/${logo._id}`}>{logo.text}</Link>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="col s8">
-                                <div id="home_banner_container">
-                                    @todo<br />
-                                    List Maker
+                        <div className="container">
+                            <div className="container row">
+                                <div className="col s4">
+                                    <h3>Recent Work</h3>
+                                    { this.handleSortByDate(data) }
+                                    { data.logos.map((logo, index) => (
+                                        <div key={index} className='home_logo_link'
+                                            style={{ cursor: "pointer" }}>
+                                            <Link to={`/view/${logo._id}`}>{logo.text}</Link>
+                                        </div>
+                                    ))}
                                 </div>
-                                <div>
-                                    <Link id="add_logo_button" to="/create">
-                                        <button>
-                                            Create a New Logo
-                                        </button>
-                                    </Link>
+                                <div className="col s8">
+                                    <div id="home_banner_container">
+                                        @goLogoLo<br/>
+                                        Logo Maker
+                                    </div>
+                                    <div>
+                                        <Link id="add_logo_button" to="/create">
+                                            <button>
+                                                Create a New Logo
+                                            </button>
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>

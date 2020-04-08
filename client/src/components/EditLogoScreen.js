@@ -56,18 +56,24 @@ class EditLogoScreen extends Component {
         color: "",
         flag: true
     }
+    handleInit = (data) => {
+        this.setState( {text: data.logo.text, color: data.logo.color, flag: false } );
+    }
     handleText = (event) => {
         this.setState({ text: event.target.value })
     }
+    handleColor = (event) => {
+        this.setState({ color: event.target.value })
+    }
     render() {
-        let color, fontSize, borderRadius, backgroundColor, borderColor, borderWidth, padding, margin;
+        let fontSize, borderRadius, backgroundColor, borderColor, borderWidth, padding, margin;
         return (
             <Query query={GET_LOGO} variables={{ logoId: this.props.match.params.id }}>
                 {({ loading, error, data }) => {
                     if (loading) return 'Loading...';
                     if (error) return `Error! ${error.message}`;
                     if (this.state.flag){
-                        this.setState({text: data.logo.text, flag: false});
+                        this.handleInit(data);
                     }
                     return (
                         <Mutation mutation={UPDATE_LOGO} key={data.logo._id} onCompleted={() => this.props.history.push(`/`)}>
@@ -83,11 +89,11 @@ class EditLogoScreen extends Component {
                                         <div className="row" style={{marginLeft: 0}}>                                            
                                             <form onSubmit={e => {
                                                 e.preventDefault();
-                                                updateLogo({ variables: { id: data.logo._id, text: this.state.text, color: color.value, fontSize: parseInt(fontSize.value),
+                                                updateLogo({ variables: { id: data.logo._id, text: this.state.text, color: this.state.color, fontSize: parseInt(fontSize.value),
                                                     backgroundColor: backgroundColor.value, borderColor: borderColor.value, borderRadius: parseInt(borderRadius.value),
                                                     borderWidth: parseInt(borderWidth.value), padding: parseInt(padding.value), margin: parseInt(margin.value) } });
                                                 this.setState({text: ""});
-                                                color.value = "";
+                                                this.setState({color: ""});
                                                 fontSize.value = "";
                                                 backgroundColor.value = "";
                                                 borderColor.value = "";
@@ -104,8 +110,8 @@ class EditLogoScreen extends Component {
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="color">Color:</label>
-                                                    <input type="color" className="form-control" name="color" ref={node => {
-                                                        color = node;
+                                                    <input type="color" className="form-control" name="color" onChange={this.handleColor} ref={node => {
+                                                        //color = node;
                                                     }} placeholder="Color" defaultValue={data.logo.color} />
                                                 </div>
                                                 <div className="form-group">
@@ -153,7 +159,7 @@ class EditLogoScreen extends Component {
                                                 <button type="submit" className="btn btn-success">Submit</button>
                                             </form>
                                             <TextEditWorkspace
-                                                logo={data.logo} text={this.state.text}/>
+                                                logo={data.logo} text={this.state.text} color={this.state.color}/>
                                             {loading && <p>Loading...</p>}
                                             {error && <p>Error :( Please try again</p>}
                                         </div>

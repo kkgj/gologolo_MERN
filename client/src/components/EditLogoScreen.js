@@ -152,11 +152,11 @@ class EditLogoScreen extends Component {
                                 <div className="container">
                                     <div className="panel panel-default">
                                         <div className="panel-heading">
+                                        <nav className="navbar navbar-expand-lg navbar-light bg-light">
                                             <h4><Link to="/">Home</Link></h4>
-                                            <h3 className="panel-title">
-                                                Edit Logo
-                                        </h3>
+                                        </nav>
                                         </div>
+                                        <div className="panel-body">
                                         <div className="row" style={{marginLeft: 0}}>                                            
                                             <form onSubmit={e => {
                                                 e.preventDefault();
@@ -173,6 +173,9 @@ class EditLogoScreen extends Component {
                                                 this.setState({padding: ""});
                                                 this.setState({margin: ""});
                                             }}>
+                                                <h3 className="panel-title pt-2">
+                                                Edit Logo
+                                                </h3>
                                                 <div className="form-group">
                                                     <label htmlFor="text">Text:</label>
                                                     <input type="text" className="form-control" name="text" onChange={this.handleText} ref={node => {
@@ -260,6 +263,7 @@ class EditLogoScreen extends Component {
                                                 padding={this.state.padding}
                                                 margin={this.state.margin}
                                             />
+                                        </div>
                                         </div>
                                     </div>
                                 </div>

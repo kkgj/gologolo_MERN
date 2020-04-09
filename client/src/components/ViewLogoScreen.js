@@ -43,13 +43,15 @@ class ViewLogoScreen extends Component {
                         <div className="container">
                             <div className="panel panel-default">
                                 <div className="panel-heading">
-                                    <h4><Link to="/">Home</Link></h4>
-                                    <h3 className="panel-title">
-                                        View Logo
-                                    </h3>
+                                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                                        <h4><Link to="/">Home</Link></h4>
+                                    </nav>
                                 </div>
                                 <div className="row">
-                                    <div className="panel-body" style={{marginLeft: 17}}>
+                                    <div className="panel-body pt-2" style={{marginLeft: 17}}>
+                                        <h3 className="panel-title">
+                                        View Logo
+                                    </h3>
                                     <dl>
                                         <dt>Text:</dt>
                                         <dd>{data.logo.text}</dd>
@@ -89,16 +91,16 @@ class ViewLogoScreen extends Component {
                                         )}
                                     </Mutation>
                                     </div>
-                                <TextEditWorkspace 
-                                text={data.logo.text} 
-                                color={data.logo.color}
-                                fontSize={data.logo.fontSize}
-                                backgroundColor={data.logo.backgroundColor}
-                                borderColor={data.logo.borderColor}
-                                borderRadius={data.logo.borderRadius}
-                                borderWidth={data.logo.borderWidth}
-                                padding={data.logo.padding}
-                                margin={data.logo.margin} />
+                                        <TextEditWorkspace 
+                                        text={data.logo.text} 
+                                        color={data.logo.color}
+                                        fontSize={data.logo.fontSize}
+                                        backgroundColor={data.logo.backgroundColor}
+                                        borderColor={data.logo.borderColor}
+                                        borderRadius={data.logo.borderRadius}
+                                        borderWidth={data.logo.borderWidth}
+                                        padding={data.logo.padding}
+                                        margin={data.logo.margin} />
                                 </div>
                             </div>
                         </div>

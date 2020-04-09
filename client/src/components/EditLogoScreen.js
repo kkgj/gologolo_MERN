@@ -61,7 +61,14 @@ class EditLogoScreen extends Component {
         borderWidth: "",
         padding: "",
         margin: "",
-        flag: true
+        flag: true,
+        buttonDisabled: false,
+        errorMessage: "",
+        fontSizeMessage: "",
+        borderRadiusMessage: "",
+        borderWidthMessage: "",
+        paddingMessage: "",
+        marginMessage: ""
     }
     handleInit = (data) => {
         this.setState( {text: data.logo.text, color: data.logo.color, fontSize: data.logo.fontSize, flag: false, 
@@ -69,12 +76,22 @@ class EditLogoScreen extends Component {
         borderWidth: data.logo.borderWidth, padding: data.logo.padding, margin: data.logo.margin} );
     }
     handleText = (event) => {
+        if (event.target.value.trim().length < 1) {
+            this.setState({ buttonDisabled: true, errorMessage: "Text cannot be empty" });
+        } else {
+            this.setState({ buttonDisabled: false, errorMessage: "" });
+        }
         this.setState({ text: event.target.value });
     }
     handleColor = (event) => {
         this.setState({ color: event.target.value });
     }
     handleFontSize = (event) => {
+        if (event.target.value.trim().length < 1) {
+            this.setState({ buttonDisabled: true, fontSizeMessage: "Font Size cannot be empty" });
+        } else {
+            this.setState({buttonDisabled: false, fontSizeMessage: ""});
+        }
         this.setState({ fontSize: event.target.value });
     }
     handleBackground = (event) => {
@@ -85,18 +102,38 @@ class EditLogoScreen extends Component {
     }
 
     handleBorderRadius = (event) => {
+        if (event.target.value.trim().length < 1) {
+            this.setState({ buttonDisabled: true, borderRadiusMessage: "Font Size cannot be empty" });
+        } else {
+            this.setState({buttonDisabled: false, borderRadiusMessage: ""});
+        }
         this.setState({ borderRadius: event.target.value });
     }
 
     handleBorderWidth = (event) => {
+        if (event.target.value.trim().length < 1) {
+            this.setState({ buttonDisabled: true, borderWidthMessage: "Font Size cannot be empty" });
+        } else {
+            this.setState({buttonDisabled: false, borderWidthMessage: ""});
+        }
         this.setState({ borderWidth: event.target.value });
     }
 
     handlePadding = (event) => {
+        if (event.target.value.trim().length < 1) {
+            this.setState({ buttonDisabled: true, paddingMessage: "Font Size cannot be empty" });
+        } else {
+            this.setState({buttonDisabled: false, paddingMessage: ""});
+        }
         this.setState({ padding: event.target.value });
     }
 
     handleMargin = (event) => {
+        if (event.target.value.trim().length < 1) {
+            this.setState({ buttonDisabled: true, marginMessage: "Font Size cannot be empty" });
+        } else {
+            this.setState({buttonDisabled: false, marginMessage: ""});
+        }
         this.setState({ margin: event.target.value });
     }
     
@@ -141,6 +178,9 @@ class EditLogoScreen extends Component {
                                                     <input type="text" className="form-control" name="text" onChange={this.handleText} ref={node => {
                                                         //text = node;
                                                     }} placeholder="Text" defaultValue={data.logo.text} />
+                                                    <p style={{ color: 'red' }}>
+                                                        {this.state.errorMessage}
+                                                    </p>
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="color">Color:</label>
@@ -153,6 +193,9 @@ class EditLogoScreen extends Component {
                                                     <input type="text" className="form-control" name="fontSize" onChange={this.handleFontSize} ref={node => {
                                                         //fontSize = node;
                                                     }} placeholder="Font Size" defaultValue={data.logo.fontSize} />
+                                                    <p style={{ color: 'red' }}>
+                                                        {this.state.fontSizeMessage}
+                                                    </p>
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="backgroundColor">Background Color:</label>
@@ -171,26 +214,38 @@ class EditLogoScreen extends Component {
                                                     <input type="number" className="form-control" name="borderRadius" onChange={this.handleBorderRadius} ref={node => {
                                                         //borderRadius = node;
                                                     }} placeholder="Border Radius" defaultValue={data.logo.borderRadius}/>
+                                                    <p style={{ color: 'red' }}>
+                                                        {this.state.borderRadiusMessage}
+                                                    </p>
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="borderWidth">Border Width:</label>
                                                     <input type="number" className="form-control" name="borderWidth" onChange={this.handleBorderWidth} ref={node => {
                                                         //borderWidth = node;
                                                     }} placeholder="Border Width" defaultValue={data.logo.borderWidth}/>
+                                                    <p style={{ color: 'red' }}>
+                                                        {this.state.borderWidthMessage}
+                                                    </p>
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="padding">Padding:</label>
                                                     <input type="number" className="form-control" name="padding" onChange={this.handlePadding} ref={node => {
                                                         //padding = node;
                                                     }} placeholder="Padding" defaultValue={data.logo.padding}/>
+                                                    <p style={{ color: 'red' }}>
+                                                        {this.state.paddingMessage}
+                                                    </p>
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="margin">Margin:</label>
                                                     <input type="number" className="form-control" name="margin" onChange={this.handleMargin} ref={node => {
                                                         //margin = node;
                                                     }} placeholder="Margin" defaultValue={data.logo.margin}/>
+                                                    <p style={{ color: 'red' }}>
+                                                        {this.state.marginMessage}
+                                                    </p>
                                                 </div>
-                                                <button type="submit" className="btn btn-success">Submit</button>
+                                                <button disabled={this.state.buttonDisabled} type="submit" className="btn btn-success">Submit</button>
                                                 {loading && <p>Loading...</p>}
                                                 {error && <p>Error :( Please try again</p>}
                                             </form>

@@ -31,3 +31,7 @@ body {
   padding-top: 5%;
   padding-bottom: 5%;
 }
+
+.btn.btn-success[disabled] {
+  background-color: #2d2e2b;
+}

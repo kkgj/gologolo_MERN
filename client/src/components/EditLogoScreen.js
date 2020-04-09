@@ -191,6 +191,8 @@ class EditLogoScreen extends Component {
                                                     }} placeholder="Margin" defaultValue={data.logo.margin}/>
                                                 </div>
                                                 <button type="submit" className="btn btn-success">Submit</button>
+                                                {loading && <p>Loading...</p>}
+                                                {error && <p>Error :( Please try again</p>}
                                             </form>
                                             <TextEditWorkspace
                                                 text={this.state.text} 
@@ -203,8 +205,6 @@ class EditLogoScreen extends Component {
                                                 padding={this.state.padding}
                                                 margin={this.state.margin}
                                             />
-                                            {loading && <p>Loading...</p>}
-                                            {error && <p>Error :( Please try again</p>}
                                         </div>
                                     </div>
                                 </div>

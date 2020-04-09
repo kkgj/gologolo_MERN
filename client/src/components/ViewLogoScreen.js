@@ -89,8 +89,16 @@ class ViewLogoScreen extends Component {
                                         )}
                                     </Mutation>
                                     </div>
-                                <TextEditWorkspace text={data.logo.text} color={data.logo.color}
-                                                logo={data.logo} />
+                                <TextEditWorkspace 
+                                text={data.logo.text} 
+                                color={data.logo.color}
+                                fontSize={data.logo.fontSize}
+                                backgroundColor={data.logo.backgroundColor}
+                                borderColor={data.logo.borderColor}
+                                borderRadius={data.logo.borderRadius}
+                                borderWidth={data.logo.borderWidth}
+                                padding={data.logo.padding}
+                                margin={data.logo.margin} />
                                 </div>
                             </div>
                         </div>

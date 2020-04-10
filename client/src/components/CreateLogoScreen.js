@@ -32,15 +32,15 @@ const ADD_LOGO = gql`
 
 class CreateLogoScreen extends Component {
     state = {
-        text: "",
-        color: "",
-        fontSize: "",
-        backgroundColor: "",
-        borderRadius: "",
-        borderColor: "",
-        borderWidth: "",
-        padding: "",
-        margin: "",
+        text: "Default Logo",
+        color: "#1f3eff",
+        fontSize: "50",
+        backgroundColor: "#6BFF33",
+        borderRadius: "10",
+        borderColor: "#AB33FF",
+        borderWidth: "20",
+        padding: "20",
+        margin: "20",
         buttonDisabled: false,
         errorMessage: "",
         fontSizeMessage: "",
@@ -147,7 +147,7 @@ class CreateLogoScreen extends Component {
                                             <label htmlFor="text">Text:</label>
                                             <input type="text" className="form-control" name="text" onChange={this.handleText} ref={node => {
                                                 //text = node;
-                                            }} placeholder="Text" />
+                                            }} placeholder="Text" defaultValue={this.state.text}/>
                                             <p style={{ color: 'red' }}>
                                                 {this.state.errorMessage}
                                             </p>
@@ -156,13 +156,13 @@ class CreateLogoScreen extends Component {
                                             <label htmlFor="color">Color:</label>
                                             <input type="color" className="form-control" name="color" onChange={this.handleColor} ref={node => {
                                                 //color = node;
-                                            }} placeholder="Color" />
+                                            }} placeholder="Color" defaultValue={"#1f3eff"}/>
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="fontSize">Font Size:</label>
                                             <input type="number" className="form-control" name="fontSize" onChange={this.handleFontSize} ref={node => {
                                                 //fontSize = node;
-                                            }} placeholder="Font Size" />
+                                            }} placeholder="Font Size" defaultValue={this.state.fontSize}/>
                                             <p style={{ color: 'red' }}>
                                             {this.state.fontSizeMessage}
                                             </p>
@@ -171,19 +171,19 @@ class CreateLogoScreen extends Component {
                                             <label htmlFor="backgroundColor">Background Color:</label>
                                             <input type="color" className="form-control" name="backgroundColor" onChange={this.handleBackground} ref={node => {
                                                 //backgroundColor = node;
-                                            }} placeholder="Background Color" />
+                                            }} placeholder="Background Color" defaultValue={"#6BFF33"}/>
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="borderColor">Border Color:</label>
                                             <input type="color" className="form-control" name="borderColor" onChange={this.handleBorderColor} ref={node => {
                                                 //borderColor = node;
-                                            }} placeholder="Border Color" />
+                                            }} placeholder="Border Color" defaultValue={"#AB33FF"}/>
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="borderRadius">Border Radius:</label>
                                             <input type="number" className="form-control" name="borderRadius" onChange={this.handleBorderRadius} ref={node => {
                                                 //borderRadius = node;
-                                            }} placeholder="Border Radius" />
+                                            }} placeholder="Border Radius" defaultValue={this.state.borderRadius}/>
                                             <p style={{ color: 'red' }}>
                                             {this.state.borderRadiusMessage}
                                         </p>
@@ -192,7 +192,7 @@ class CreateLogoScreen extends Component {
                                             <label htmlFor="borderWidth">Border Width:</label>
                                             <input type="number" className="form-control" name="borderWidth" onChange={this.handleBorderWidth} ref={node => {
                                                 //borderWidth = node;
-                                            }} placeholder="Border Width" />
+                                            }} placeholder="Border Width" defaultValue={this.state.borderWidth}/>
                                             <p style={{ color: 'red' }}>
                                             {this.state.borderWidthMessage}
                                         </p>
@@ -201,7 +201,7 @@ class CreateLogoScreen extends Component {
                                             <label htmlFor="padding">Padding:</label>
                                             <input type="number" className="form-control" name="padding" onChange={this.handlePadding} ref={node => {
                                                 //padding = node;
-                                            }} placeholder="Padding" />
+                                            }} placeholder="Padding" defaultValue={this.state.padding}/>
                                             <p style={{ color: 'red' }}>
                                             {this.state.paddingMessage}
                                         </p>
@@ -210,7 +210,7 @@ class CreateLogoScreen extends Component {
                                             <label htmlFor="margin">Margin:</label>
                                             <input type="number" className="form-control" name="margin" onChange={this.handleMargin} ref={node => {
                                                 //margin = node;
-                                            }} placeholder="Margin" />
+                                            }} placeholder="Margin" defaultValue={this.state.margin}/>
                                             <p style={{ color: 'red' }}>
                                             {this.state.marginMessage}
                                         </p>

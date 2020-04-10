@@ -1,4 +1,4 @@
-## Querying all Logos
+## Getting all Logos
 
 {
   logos{
@@ -16,7 +16,7 @@
   }
 }
 
-## Querying a Logo by id
+## Getting a Logo by id
 
 {
   logo(id: "5e8792d0509de6d4678f3603"){
@@ -37,24 +37,37 @@
 ## Adding a Logo
 
 mutation AddLogo {
-  addLogo (text: "WWW",
-          color: "#1f3eff",
-          fontSize: 50,
-          backgroundColor: "#6BFF33",
-          borderRadius: 10,
-          borderColor: "#AB33FF",
-          borderWidth: 20,
-          padding: 20,
-          margin: 20) {
-            text
-            color
-            fontSize
-            backgroundColor
-            borderRadius
-            borderColor
-            borderWidth
-            padding
-            margin
-  			}
-}   
+  addLogo(text: "WWW", color: "#1f3eff", fontSize: 50, backgroundColor: "#6BFF33", 
+  borderRadius: 10, borderColor: "#AB33FF", borderWidth: 20, padding: 20, margin: 20) {
+    text
+    color
+    fontSize
+    backgroundColor
+    borderRadius
+    borderColor
+    borderWidth
+    padding
+    margin
+  }
+} 
+
+## Update a Logo
+
+mutation updateLogo {
+  updateLogo(id: "5e8792d0509de6d4678f3603", text: "W4", color: "#DACC2F ", 
+  fontSize: 60, backgroundColor: "#43885D", borderRadius: 10, 
+  borderColor: "#AB33FF", borderWidth: 20, padding: 20, margin: 20) {
+    _id
+    text
+    color
+    fontSize
+    backgroundColor
+    borderRadius
+    borderColor
+    borderWidth
+    padding
+    margin
+  }
+}
+
 

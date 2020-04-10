@@ -70,4 +70,13 @@ mutation updateLogo {
   }
 }
 
+## Remove a Logo
+
+mutation removeLogo {
+  removeLogo(id: "5e87ce74509de6d4678f3606") {
+    _id
+  }
+}
+
+
 

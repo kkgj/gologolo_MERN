@@ -48,7 +48,7 @@ class ViewLogoScreen extends Component {
                                     </nav>
                                 </div>
                                 <div className="row">
-                                    <div className="panel-body pt-2" style={{marginLeft: 17}}>
+                                    <div className="panel-body panel-body container pb-3 bg-dark text-white pt-2" style={{marginLeft: 15.5, marginRight: 14.5}}>
                                         <h3 className="panel-title">
                                         View Logo
                                     </h3>

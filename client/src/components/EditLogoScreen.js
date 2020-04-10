@@ -156,7 +156,7 @@ class EditLogoScreen extends Component {
                                             <h4><Link to="/">Home</Link></h4>
                                         </nav>
                                         </div>
-                                        <div className="panel-body">
+                                        <div className="panel-body container pb-3 bg-dark text-white">
                                         <div className="row" style={{marginLeft: 0}}>                                            
                                             <form onSubmit={e => {
                                                 e.preventDefault();

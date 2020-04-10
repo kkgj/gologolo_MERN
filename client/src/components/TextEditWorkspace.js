@@ -14,7 +14,7 @@ class TextEditWorkspace extends Component {
                 borderStyle : "solid",
                 padding : this.props.padding + "px",
                 margin : this.props.margin + "px",
-                left : "33%",
+                left : "34%",
                 right : "auto",
                 position : "absolute",
                 width : "auto",

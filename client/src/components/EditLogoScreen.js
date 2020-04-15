@@ -103,7 +103,7 @@ class EditLogoScreen extends Component {
 
     handleBorderRadius = (event) => {
         if (event.target.value.trim().length < 1) {
-            this.setState({ buttonDisabled: true, borderRadiusMessage: "Font Size cannot be empty" });
+            this.setState({ buttonDisabled: true, borderRadiusMessage: "Border Radius cannot be empty" });
         } else {
             this.setState({buttonDisabled: false, borderRadiusMessage: ""});
         }
@@ -112,7 +112,7 @@ class EditLogoScreen extends Component {
 
     handleBorderWidth = (event) => {
         if (event.target.value.trim().length < 1) {
-            this.setState({ buttonDisabled: true, borderWidthMessage: "Font Size cannot be empty" });
+            this.setState({ buttonDisabled: true, borderWidthMessage: "Border Width cannot be empty" });
         } else {
             this.setState({buttonDisabled: false, borderWidthMessage: ""});
         }
@@ -121,7 +121,7 @@ class EditLogoScreen extends Component {
 
     handlePadding = (event) => {
         if (event.target.value.trim().length < 1) {
-            this.setState({ buttonDisabled: true, paddingMessage: "Font Size cannot be empty" });
+            this.setState({ buttonDisabled: true, paddingMessage: "Padding cannot be empty" });
         } else {
             this.setState({buttonDisabled: false, paddingMessage: ""});
         }
@@ -130,7 +130,7 @@ class EditLogoScreen extends Component {
 
     handleMargin = (event) => {
         if (event.target.value.trim().length < 1) {
-            this.setState({ buttonDisabled: true, marginMessage: "Font Size cannot be empty" });
+            this.setState({ buttonDisabled: true, marginMessage: "Margin cannot be empty" });
         } else {
             this.setState({buttonDisabled: false, marginMessage: ""});
         }
